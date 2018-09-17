@@ -1,0 +1,7 @@
+<nav class="breadcrumb" [class.has-arrow-separator]="seperator==='arrow'" [class.has-bullet-separator]="seperator==='bullet'"
+  [class.has-succeeds-seperator]="seperator==='succeeds'" [class.has-arrow-seperator]="seperator==='arrow'"
+  [class.is-small]="size==='small'" [class.is-medium]="size==='medium'" [class.is-large]="size==='large'" aria-label="breadcrumbs">
+  <ul>
+    <li bulma-breadcrumb-item [breadcrumb]="breadcrumb" *ngFor="let breadcrumb of breadcrumbs"></li>
+  </ul>
+</nav>

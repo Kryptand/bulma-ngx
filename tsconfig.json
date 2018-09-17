@@ -16,6 +16,12 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@bulma-ngx/breadcrumb": [
+        "libs/breadcrumb/src/index.ts"
+      ],
+      "@bulma-ngx/loader": [
+        "libs/loader/src/index.ts"
+      ]
     }
   },
   "exclude": [

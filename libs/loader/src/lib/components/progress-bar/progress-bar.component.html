@@ -1,0 +1,5 @@
+<ng-container *ngIf="(loadingBarService.progress$|async) as progress">
+  <progress class="progress" [class.is-small]="size==='small'" [class.is-medium]="size==='medium'" [class.is-large]="size==='large'"
+    [class.is-primary]="color==='primary'" [class.is-link]="color==='link'" [class.is-success]="color==='success'"
+    [class.is-warning]="color==='warning'" [class.is-danger]="color==='danger'" value="{{progress}}" max="100">{{progress}}</progress>
+</ng-container>
