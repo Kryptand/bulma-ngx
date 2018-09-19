@@ -15,3 +15,7 @@ https://bulma.io/
 - [ ] Table
 - [ ] Form Elements
 - [ ] Modal
+
+- [ ] Distribute lib modules as NPM package
+
+- [ ] Create a Demo Application
