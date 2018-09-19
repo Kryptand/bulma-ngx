@@ -1,29 +1,22 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { BreadcrumbItemComponent } from "./breadcrumb-item.component";
 
-import { BreadcrumbItemComponent } from './breadcrumb-item.component';
+describe("BreadcrumbItemComponent", () => {
+	let comp: BreadcrumbItemComponent;
+	let fixture: ComponentFixture<BreadcrumbItemComponent>;
 
-describe('BreadcrumbItemComponent', () => {
-  let component: BreadcrumbItemComponent;
-  let fixture: ComponentFixture<BreadcrumbItemComponent>;
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [ BreadcrumbItemComponent ],
+			schemas: [ NO_ERRORS_SCHEMA ]
+		});
+		fixture = TestBed.createComponent(BreadcrumbItemComponent);
+		comp = fixture.componentInstance;
+	});
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [BreadcrumbItemComponent]
-      }).compileComponents();
-    })
-  );
+	it("can load instance", () => {
+		expect(comp).toBeTruthy();
+	});
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BreadcrumbItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

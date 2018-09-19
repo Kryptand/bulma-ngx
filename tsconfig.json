@@ -21,6 +21,12 @@
       ],
       "@bulma-ngx/loader": [
         "libs/loader/src/index.ts"
+      ],
+      "@bulma-ngx/navigation": [
+        "libs/navigation/src/index.ts"
+      ],
+      "@bulma-ngx/message": [
+        "libs/message/src/index.ts"
       ]
     }
   },

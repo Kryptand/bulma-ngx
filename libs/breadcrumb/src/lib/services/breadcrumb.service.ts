@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { Breadcrumb } from '../models/breadcrumb';
+import { BreadcrumbViewModel } from '../models/breadcrumb.view-model';
 @Injectable()
 export class BreadcrumbService {
-  currBreadcrumb$ = new Subject<Breadcrumb>();
+  currBreadcrumb$ = new Subject<BreadcrumbViewModel>();
 
   constructor(private router: Router) {}
 
   addItem(label: string, href: string = this.router.url): void {
-    const breadcrumbItem: Breadcrumb = { label: label, url: href };
+    const breadcrumbItem: BreadcrumbViewModel = { label: label, url: href };
     this.currBreadcrumb$.next(breadcrumbItem);
   }
 }

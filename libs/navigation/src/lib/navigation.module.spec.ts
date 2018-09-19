@@ -1,16 +1,16 @@
 import { async, TestBed } from '@angular/core/testing';
-import { BreadcrumbModule } from './breadcrumb.module';
+import { NavigationModule } from './navigation.module';
 
-describe('BreadcrumbModule', () => {
+describe('NavigationModule', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [BreadcrumbModule]
+        imports: [NavigationModule]
       }).compileComponents();
     })
   );
 
   it('should create', () => {
-    expect(BreadcrumbModule).toBeDefined();
+    expect(NavigationModule).toBeDefined();
   });
 });

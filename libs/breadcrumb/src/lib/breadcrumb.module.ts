@@ -1,9 +1,9 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BreadcrumbContainerComponent } from './containers/breadcrumb-container/breadcrumb-container.component';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BreadcrumbItemComponent } from './components/breadcrumb-item/breadcrumb-item.component';
+import { BreadcrumbContainerComponent } from './containers/breadcrumb-container/breadcrumb-container.component';
 import { BreadcrumbService } from './services/breadcrumb.service';
-import { RouterModule } from '../../../../node_modules/@angular/router';
 
 @NgModule({
   imports: [CommonModule, RouterModule],

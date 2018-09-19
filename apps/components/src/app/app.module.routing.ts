@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { Breadcrumb } from '@bulma-ngx/breadcrumb';
+import { BreadcrumbViewModel } from '@bulma-ngx/breadcrumb';
 import { CardsComponent } from './cards/cards.component';
 
 const ROUTES: Routes = [
@@ -7,7 +7,7 @@ const ROUTES: Routes = [
     path: 'cards',
     component: CardsComponent,
     data: {
-      breadcrumbs: [new Breadcrumb('Cards', '/cards')]
+      breadcrumbs: [new BreadcrumbViewModel('Cards', '/cards')]
     }
   }
 ];

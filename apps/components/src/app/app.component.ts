@@ -8,9 +8,5 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'bulma-ngx';
-  constructor(private http: HttpClient) {
-    this.http
-      .get('https://jsonplaceholder.typicode.com/photos')
-      .subscribe(val => console.debug(val));
-  }
+  constructor(private http: HttpClient) {}
 }

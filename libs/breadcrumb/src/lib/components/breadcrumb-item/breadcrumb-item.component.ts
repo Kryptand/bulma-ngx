@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Breadcrumb } from '../../models/breadcrumb';
+import { BreadcrumbViewModel } from '../../models/breadcrumb.view-model';
 
 @Component({
   selector: 'bulma-breadcrumb-item,[bulma-breadcrumb-item]',
@@ -7,7 +7,7 @@ import { Breadcrumb } from '../../models/breadcrumb';
   styleUrls: ['./breadcrumb-item.component.css']
 })
 export class BreadcrumbItemComponent implements OnInit {
-  @Input() breadcrumb: Breadcrumb;
+  @Input() breadcrumb: BreadcrumbViewModel;
   constructor() {}
 
   ngOnInit() {

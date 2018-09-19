@@ -1,4 +1,4 @@
-export class Breadcrumb {
+export class BreadcrumbViewModel {
   label: string;
   url: string;
   icon?: string;

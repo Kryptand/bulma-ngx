@@ -1,0 +1,7 @@
+<ng-container *ngIf="orientation==='vertical'">
+  <bulma-navbar-vertical [navbarViewModel]="(navbar$|async)"></bulma-navbar-vertical>
+</ng-container>
+<ng-container *ngIf="orientation==='horizontal'">
+  <bulma-navbar-horizontal [navbarViewModel]="(navbar$|async)">
+  </bulma-navbar-horizontal>
+</ng-container>

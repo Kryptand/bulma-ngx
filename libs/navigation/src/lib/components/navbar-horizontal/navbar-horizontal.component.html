@@ -1,0 +1,44 @@
+<ng-container *ngIf="navbarViewModel">
+  <nav class="navbar" [class.is-fixed-top]="isFixedTop" role="navigation" aria-label="main navigation">
+    <div *ngIf="navbarViewModel.brandIcon" class="navbar-brand" [title]="navbarViewModel.brandName ? navbarViewModel.brandName:'brand'">
+      <a class="navbar-item">
+        {{navbarViewModel.brandIcon}}
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <ng-container *ngFor="let menuItemAggregate of menuItemAggregate.menuItems">
+          <ng-container *ngTemplateOutlet="menuItemAggregate;context:menuItemAggregate">
+          </ng-container>
+        </ng-container>
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </nav>
+</ng-container>
+
+<ng-template #menuItemAggregate let-menuItemAggregate="context">
+  <ng-container *ngIf=" menuItemAggregate.menuItems">
+    <div *ngFor="let menuItem of menuItemAggregate.menuItems" class="menu-list">
+      <a [class]="menuItem.class" [id]=[menuItem.id] [routerLink]="menuItem.url" routerLinkActive="is-active">
+        <span class="icon is-small">
+          <i class="fas fa-{{menuItem.icon}}" aria-hidden="true"></i>
+        </span>
+        <span>
+          {{menuItem.label}}
+        </span>
+        <ul>
+          <ng-container *ngFor="let menuItemChildAggregate of menuItemAggregate.menuItems">
+            <ng-container *ngTemplateOutlet="menuItemAggregate;context:menuItemChildAggregate">
+            </ng-container>
+          </ng-container>
+        </ul>
+      </a>
+    </div>
+  </ng-container>
+</ng-template>

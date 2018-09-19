@@ -19,6 +19,12 @@
     },
     "loader": {
       "tags": []
+    },
+    "navigation": {
+      "tags": []
+    },
+    "message": {
+      "tags": []
     }
   }
 }
