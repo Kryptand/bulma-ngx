@@ -229,6 +229,62 @@
           }
         }
       }
+    },
+    "notification": {
+      "root": "libs/notification",
+      "sourceRoot": "libs/notification/src",
+      "projectType": "library",
+      "prefix": "bulma-ngx",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/notification/src/test.ts",
+            "tsConfig": "libs/notification/tsconfig.spec.json",
+            "karmaConfig": "libs/notification/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/notification/tsconfig.lib.json",
+              "libs/notification/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "utility": {
+      "root": "libs/utility",
+      "sourceRoot": "libs/utility/src",
+      "projectType": "library",
+      "prefix": "bulma-ngx",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/utility/src/test.ts",
+            "tsConfig": "libs/utility/tsconfig.spec.json",
+            "karmaConfig": "libs/utility/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utility/tsconfig.lib.json",
+              "libs/utility/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

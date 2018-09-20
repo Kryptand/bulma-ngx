@@ -25,6 +25,12 @@
     },
     "message": {
       "tags": []
+    },
+    "notification": {
+      "tags": []
+    },
+    "utility": {
+      "tags": []
     }
   }
 }

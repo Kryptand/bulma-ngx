@@ -27,6 +27,12 @@
       ],
       "@bulma-ngx/message": [
         "libs/message/src/index.ts"
+      ],
+      "@bulma-ngx/notification": [
+        "libs/notification/src/index.ts"
+      ],
+      "@bulma-ngx/utility": [
+        "libs/utility/src/index.ts"
       ]
     }
   },

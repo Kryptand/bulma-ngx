@@ -1,0 +1,5 @@
+<div class="notification" [class.is-primary]="notification.type==='primary'" [class.is-link]="notification.type==='link'"
+  [class.is-success]="notification.type==='success'" [class.is-warning]="notification.type==='warning'"
+  [class.is-danger]="notification.type==='danger'">
+  <button class="delete" (click)="closeNotification()"></button>
+</div>
