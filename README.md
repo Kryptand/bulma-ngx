@@ -8,6 +8,7 @@ https://bulma.io/
 - [x] Breadcrumb
 - [x] Navigation (Horizontal/Vertical)
 - [x] Message
+- [x] Notification
 - [ ] Panel
 - [ ] Tabs
 - [ ] Pagination
