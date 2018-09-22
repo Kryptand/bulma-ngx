@@ -1,43 +1,54 @@
 import { Action } from '@ngrx/store';
+import { NotificationViewModel } from '../models/notification.view-model';
+import { NotifierConfig } from '../models/notifier-config';
 
 export enum NotificationActionTypes {
-  ShowNotificationAction = '[Notification] Show',
-  HideNotificationAction = '[Notification] Hide',
-  NotificationWasDisplayedAction = '[Notification] Was displayed',
-  HideAllNotificationsAction = '[Notification] Hide all',
-  HideNewestNotificationAction = '[Notification] Hide newest',
-  HideOldestNotificationAction = '[Notification] Hide oldest'
+  AddNotification = '[Notification] Add Notification',
+  AddConfiguration = '[Notification] Add Notification Config',
+  AddNotifications = '[Notification] Add Notifications',
+  DeleteNotification = '[Notification] Delete Notification',
+  DeleteNotifications = '[Notification] Delete Notifications',
+  ClearNotifications = '[Notification] Clear Notifications'
 }
 
-export class ShowNotificationAction implements Action {
-  readonly type = NotificationActionTypes.ShowNotificationAction;
-  constructor(public payload: { notificationOptions: NotificationOptions }) {}
+export class AddNotification implements Action {
+  readonly type = NotificationActionTypes.AddNotification;
+
+  constructor(public payload: { notification: NotificationViewModel }) {}
 }
-export class NotificationWasDisplayedAction implements Action {
-  readonly type = NotificationActionTypes.NotificationWasDisplayedAction;
-  constructor(public payload: { notificationOptions: NotificationOptions }) {}
+
+export class AddConfiguration implements Action {
+  readonly type = NotificationActionTypes.AddConfiguration;
+
+  constructor(public payload: { options: NotifierConfig }) {}
 }
-export class HideNotificationAction implements Action {
-  readonly type = NotificationActionTypes.HideNotificationAction;
-  constructor(public payload: { notificationId: string }) {}
+
+export class AddNotifications implements Action {
+  readonly type = NotificationActionTypes.AddNotifications;
+
+  constructor(public payload: { notifications: NotificationViewModel[] }) {}
 }
-export class HideAllNotificationsAction implements Action {
-  readonly type = NotificationActionTypes.HideAllNotificationsAction;
-  constructor() {}
+
+export class DeleteNotification implements Action {
+  readonly type = NotificationActionTypes.DeleteNotification;
+
+  constructor(public payload: { id: string }) {}
 }
-export class HideNewestNotificationAction implements Action {
-  readonly type = NotificationActionTypes.HideNewestNotificationAction;
-  constructor() {}
+
+export class DeleteNotifications implements Action {
+  readonly type = NotificationActionTypes.DeleteNotifications;
+
+  constructor(public payload: { ids: string[] }) {}
 }
-export class HideOldestNotificationAction implements Action {
-  readonly type = NotificationActionTypes.HideOldestNotificationAction;
-  constructor() {}
+
+export class ClearNotifications implements Action {
+  readonly type = NotificationActionTypes.ClearNotifications;
 }
 
 export type NotificationActions =
-  | ShowNotificationAction
-  | NotificationWasDisplayedAction
-  | HideNotificationAction
-  | HideAllNotificationsAction
-  | HideNewestNotificationAction
-  | HideOldestNotificationAction;
+  | AddNotification
+  | AddNotifications
+  | AddConfiguration
+  | DeleteNotification
+  | DeleteNotifications
+  | ClearNotifications;

@@ -24,9 +24,8 @@ export class NotifierConfig implements NotifierOptionsModel {
   public behaviour: {
     autoHide: number | false;
     onClick: 'hide' | false;
-    onMouseover: 'pauseAutoHide' | 'resetAutoHide' | false;
+    onMouseover: 'pauseAutoHide' | false;
     showDismissButton: boolean;
-    stacking: number | false;
   };
 
   public position: {
@@ -42,7 +41,7 @@ export class NotifierConfig implements NotifierOptionsModel {
   };
 
   public constructor(customOptions: NotifierOptionsModel = {}) {
-	  Object.assign(this, DEFAULT_NOTIFIER_OPTIONS);
+    Object.assign( this, DEFAULT_NOTIFIER_OPTIONS );
     if (customOptions.animations !== undefined) {
       if (customOptions.animations.enabled !== undefined) {
         this.animations.enabled = customOptions.animations.enabled;
@@ -76,41 +75,43 @@ export class NotifierConfig implements NotifierOptionsModel {
     }
   }
 }
-private const DEFAULT_NOTIFIER_OPTIONS: NotifierOptionsModel = {
-		animations:{
-		enabled: true,
-		hide: {
-			easing: 'ease',
-			offset: 50,
-			preset: 'fade',
-			speed: 300
-		},
-		overlap: 150,
-		shift: {
-			easing: 'ease',
-			speed: 300
-		},
-		show: {
-			easing: 'ease',
-			preset: 'slide',
-			speed: 300
-		}
-	},
-	behaviour: {
-		autoHide: 7000,
-		onClick: false,
-		onMouseover: 'pauseAutoHide',
-		showDismissButton: true,
-		stacking: 4
-	},
-	position : {
-		horizontal: {
-			distance: 12,
-			position: 'left'
-		},
-		vertical: {
-			distance: 12,
-			gap: 10,
-			position: 'bottom'
-		}
-	}
+
+const DEFAULT_NOTIFIER_OPTIONS: NotifierOptionsModel = {
+  animations: {
+    enabled: true,
+    hide: {
+      easing: 'ease',
+      offset: 50,
+      preset: 'fade',
+      speed: 300
+    },
+    overlap: 150,
+    shift: {
+      easing: 'ease',
+      speed: 300
+    },
+    show: {
+      easing: 'ease',
+      preset: 'slide',
+      speed: 300
+    }
+  },
+  behaviour: {
+    autoHide: 7000,
+    onClick: false,
+    onMouseover: 'pauseAutoHide',
+    showDismissButton: true
+  },
+  position: {
+    horizontal: {
+      distance: 12,
+      position: 'left'
+    },
+    vertical: {
+      distance: 12,
+      gap: 10,
+      position: 'bottom'
+    }
+  },
+  dimensions: { width: 200 }
+};

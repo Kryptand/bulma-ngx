@@ -23,7 +23,6 @@ export interface NotifierOptionsModel {
     onClick?: 'hide' | false;
     onMouseover?: 'pauseAutoHide' | 'resetAutoHide' | false;
     showDismissButton?: boolean;
-    stacking?: number | false;
   };
   position?: {
     horizontal?: {
@@ -36,5 +35,7 @@ export interface NotifierOptionsModel {
       position?: 'top' | 'bottom';
     };
   };
-  theme?: string;
+  dimensions?: {
+    width?: number;
+  };
 }

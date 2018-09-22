@@ -1,5 +1,8 @@
-<div class="notification" [class.is-primary]="notification.type==='primary'" [class.is-link]="notification.type==='link'"
+<div (mouseenter) ="cancelHide() "  (mouseleave) ="autoHide()" [class.is-link]="notification.type==='link'" [class.is-primary]="notification.type==='primary'"
+  class="notification"
   [class.is-success]="notification.type==='success'" [class.is-warning]="notification.type==='warning'"
   [class.is-danger]="notification.type==='danger'">
-  <button class="delete" (click)="closeNotification()"></button>
+  <button (click)="closeNotification.emit(notification.id)" *ngIf="notifierOptions.behaviour.showDismissButton"
+    class="delete"></button>
+  <p [innerHtml]="notification.content"></p>
 </div>

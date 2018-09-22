@@ -1,15 +1,39 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NotificationViewModel } from '../../model/notification.view-model';
+import { Component, EventEmitter, Input, OnInit, Output, Sanitizer, SecurityContext } from '@angular/core';
+import { NotificationViewModel } from '../../models/notification.view-model';
+import { NotifierOptionsModel } from '../../models/notifier-options.model';
 
 @Component({
-  selector: 'bulma-ngx-notification',
-  templateUrl: './notification.component.html',
-  styleUrls: ['./notification.component.css']
+  selector: 'bulma-notification',
+  templateUrl: './notification.component.html'
 })
 export class NotificationComponent implements OnInit {
   @Input() notification: NotificationViewModel;
-  @Output() closeNotification: EventEmitter<boolean>;
-  constructor() {}
+  @Input() notifierOptions: NotifierOptionsModel;
+  @Output()
+  closeNotification: EventEmitter<string> = new EventEmitter<string>();
+  timeout: any;
 
-  ngOnInit() {}
+  constructor(private sanitizer: Sanitizer) {
+  }
+
+  ngOnInit() {
+    this.notification.content = this.sanitizer.sanitize(
+      SecurityContext.HTML,
+      this.notification.content
+    );
+    if (this.notifierOptions.behaviour.autoHide) {
+      this.autoHide();
+    }
+  }
+
+  autoHide() {
+    this.timeout = setTimeout(
+      () => this.closeNotification.emit( this.notification.id ),
+      this.notifierOptions.behaviour.autoHide
+    );
+  }
+
+  cancelHide() {
+    clearTimeout( this.timeout );
+  }
 }

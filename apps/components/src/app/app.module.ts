@@ -7,6 +7,9 @@ import { CardsComponent } from './cards/cards.component';
 import { APP_MODULE_ROUTES } from './app.module.routing';
 import { LoaderModule } from '@bulma-ngx/loader';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { NotificationModule } from '@bulma-ngx/notification';
 
 @NgModule({
   declarations: [AppComponent, CardsComponent],
@@ -16,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     NxModule.forRoot(),
     HttpClientModule,
     LoaderModule.forRoot(),
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument(),
+    NotificationModule.forRoot(),
     APP_MODULE_ROUTES
   ],
   providers: [],
