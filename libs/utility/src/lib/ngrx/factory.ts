@@ -15,11 +15,15 @@ export function createReducer<TState = any>(
   const klass = isInstance ? store.constructor : store;
 
   if (!klass.hasOwnProperty(NGRX_ACTIONS_META)) {
-    throw new Error('A reducer can be created from a @Store decorated class only.');
+    throw new Error(
+      'A reducer can be created from a @Store decorated class only.'
+    );
   }
 
   const instance = isInstance ? store : new store();
-  const { initialState, actions, effects } = klass[NGRX_ACTIONS_META] as StoreMetadata;
+  const { initialState, actions, effects } = klass[
+    NGRX_ACTIONS_META
+  ] as StoreMetadata;
 
   return function(state: any = initialState, action: Action) {
     const actionMeta = actions[action.type];
@@ -47,7 +51,9 @@ export function createReducer<TState = any>(
           });
         } else if (NgrxSelect.store) {
           if (Array.isArray(retVal)) {
-            retVal.forEach(r => NgrxSelect.store && NgrxSelect.store.dispatch(r));
+            retVal.forEach(
+              r => NgrxSelect.store && NgrxSelect.store.dispatch(r)
+            );
           } else {
             NgrxSelect.store.dispatch(retVal);
           }

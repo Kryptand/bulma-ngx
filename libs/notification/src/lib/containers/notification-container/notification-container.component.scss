@@ -2,3 +2,14 @@ bulma-notification {
   margin-top: 10px;
   display: block;
 }
+:host {
+}
+.notification-wrapper {
+  position: absolute;
+  z-index: 9999;
+  max-width: 350px;
+  @media all and (max-width: 920px) {
+    bottom: 0px;
+    max-width: 100%;
+  }
+}

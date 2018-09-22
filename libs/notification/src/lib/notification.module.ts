@@ -4,7 +4,7 @@ import { NotificationContainerComponent } from './containers/notification-contai
 import { NotificationComponent } from './components/notification/notification.component';
 import { notificationReducer } from './store/notification.reducer';
 import { StoreModule } from '@ngrx/store';
-import { NotificationService } from '@bulma-ngx/notification';
+import { NotificationService } from './services/notification.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

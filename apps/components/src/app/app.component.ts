@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NotificationService, NotificationViewModel, NotifierConfig } from '@bulma-ngx/notification';
+import {
+  NotificationService,
+  NotificationViewModel,
+  NotifierConfig
+} from '@bulma-ngx/notification';
 
 @Component({
   selector: 'bulma-ngx-root',
@@ -22,7 +26,7 @@ export class AppComponent {
         delay = 1500;
       }
 
-      setTimeout( () => {
+      setTimeout(() => {
         const testviewModel = new NotificationViewModel();
         testviewModel.type = 'warning';
         testviewModel.content =
@@ -31,15 +35,12 @@ export class AppComponent {
           '  consectetur adipiscing elit <script>alert("foschni");</script>' +
           i;
 
-        this.notificationService.addNotification( testviewModel );
+        this.notificationService.addNotification(testviewModel);
         if (--i) {
-          createExampleData( i );
+          createExampleData(i);
         }
-      }, delay );
+      }, delay);
     };
-    createExampleData( 10 );
-    const optionsModel = new NotifierConfig();
-    optionsModel.position = 'mr-foschni';
-    this.notificationService.setNotificationOptions( optionsModel );
+    createExampleData(10);
   }
 }

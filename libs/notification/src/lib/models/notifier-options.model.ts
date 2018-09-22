@@ -20,8 +20,6 @@ export interface NotifierOptionsModel {
   };
   behaviour?: {
     autoHide?: number | false;
-    onClick?: 'hide' | false;
-    onMouseover?: 'pauseAutoHide' | 'resetAutoHide' | false;
     showDismissButton?: boolean;
   };
   position?: {
@@ -31,11 +29,7 @@ export interface NotifierOptionsModel {
     };
     vertical?: {
       distance?: number;
-      gap?: number;
       position?: 'top' | 'bottom';
     };
-  };
-  dimensions?: {
-    width?: number;
   };
 }

@@ -24,9 +24,7 @@
               "libs/breadcrumb/tsconfig.lib.json",
               "libs/breadcrumb/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -100,9 +98,7 @@
             "polyfills": "apps/components/src/polyfills.ts",
             "tsConfig": "apps/components/tsconfig.spec.json",
             "karmaConfig": "apps/components/karma.conf.js",
-            "styles": [
-              "apps/components/src/styles.css"
-            ],
+            "styles": ["apps/components/src/styles.css"],
             "scripts": [],
             "assets": [
               "apps/components/src/favicon.ico",
@@ -117,9 +113,7 @@
               "apps/components/tsconfig.app.json",
               "apps/components/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -139,9 +133,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/components-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -167,9 +159,7 @@
               "libs/loader/tsconfig.lib.json",
               "libs/loader/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -195,9 +185,7 @@
               "libs/navigation/tsconfig.lib.json",
               "libs/navigation/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -223,9 +211,7 @@
               "libs/message/tsconfig.lib.json",
               "libs/message/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -251,9 +237,7 @@
               "libs/notification/tsconfig.lib.json",
               "libs/notification/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -279,9 +263,7 @@
               "libs/utility/tsconfig.lib.json",
               "libs/utility/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

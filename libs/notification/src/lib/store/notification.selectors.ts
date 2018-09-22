@@ -1,10 +1,9 @@
-import * as fromNotification from './notification.reducer';
-import { NotificationState } from './notification.reducer';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { adapter, NotificationState } from './notification.reducer';
 
-export const selectNotificationState = createFeatureSelector<
-  fromNotification.NotificationState
->('notification');
+export const selectNotificationState = createFeatureSelector<NotificationState>(
+  'notification'
+);
 export const getNotificationState = createSelector(
   selectNotificationState,
   notifications => notifications
@@ -14,7 +13,7 @@ export const {
   selectEntities,
   selectAll,
   selectTotal
-} = fromNotification.adapter.getSelectors(getNotificationState);
+} = adapter.getSelectors(getNotificationState);
 
 export const selectNotificationConfig = createSelector(
   getNotificationState,

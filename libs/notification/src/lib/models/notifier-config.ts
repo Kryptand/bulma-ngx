@@ -41,7 +41,7 @@ export class NotifierConfig implements NotifierOptionsModel {
   };
 
   public constructor(customOptions: NotifierOptionsModel = {}) {
-    Object.assign( this, DEFAULT_NOTIFIER_OPTIONS );
+    Object.assign(this, DEFAULT_NOTIFIER_OPTIONS);
     if (customOptions.animations !== undefined) {
       if (customOptions.animations.enabled !== undefined) {
         this.animations.enabled = customOptions.animations.enabled;
@@ -98,20 +98,16 @@ const DEFAULT_NOTIFIER_OPTIONS: NotifierOptionsModel = {
   },
   behaviour: {
     autoHide: 7000,
-    onClick: false,
-    onMouseover: 'pauseAutoHide',
     showDismissButton: true
   },
   position: {
     horizontal: {
-      distance: 12,
-      position: 'left'
+      distance: 10,
+      position: 'right'
     },
     vertical: {
       distance: 12,
-      gap: 10,
       position: 'bottom'
     }
-  },
-  dimensions: { width: 200 }
+  }
 };

@@ -22,7 +22,9 @@ export function ensureStoreMetadata(target: any): StoreMetadata {
   // see https://github.com/angular/angular/blob/master/packages/core/src/util/decorators.ts#L60
   if (!target.hasOwnProperty(NGRX_ACTIONS_META)) {
     const defaultMetadata: StoreMetadata = { actions: {}, effects: {} };
-    Object.defineProperty(target, NGRX_ACTIONS_META, { value: defaultMetadata });
+    Object.defineProperty(target, NGRX_ACTIONS_META, {
+      value: defaultMetadata
+    });
   }
   return target[NGRX_ACTIONS_META];
 }

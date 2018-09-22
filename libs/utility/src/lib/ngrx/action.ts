@@ -2,7 +2,11 @@ import { ensureStoreMetadata } from './internals';
 import { ActionType } from './symbols';
 
 export function Action(...actionsKlasses: ActionType[]) {
-  return function(target: any, name: string, descriptor: TypedPropertyDescriptor<any>) {
+  return function(
+    target: any,
+    name: string,
+    descriptor: TypedPropertyDescriptor<any>
+  ) {
     const meta = ensureStoreMetadata(target.constructor);
 
     for (const klass of actionsKlasses) {
@@ -11,7 +15,9 @@ export function Action(...actionsKlasses: ActionType[]) {
 
       if (meta.actions[type]) {
         throw new Error(
-          `@Action for '${type}' is defined multiple times in functions '${meta.actions[type].fn}' and '${name}'`
+          `@Action for '${type}' is defined multiple times in functions '${
+            meta.actions[type].fn
+          }' and '${name}'`
         );
       }
 

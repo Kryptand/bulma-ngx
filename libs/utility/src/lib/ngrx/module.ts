@@ -1,11 +1,25 @@
-import { NgModule, InjectionToken, ModuleWithProviders, Injector, Inject, Optional } from '@angular/core';
-import { Store, StoreModule, ReducerManager, combineReducers } from '@ngrx/store';
+import {
+  NgModule,
+  InjectionToken,
+  ModuleWithProviders,
+  Injector,
+  Inject,
+  Optional
+} from '@angular/core';
+import {
+  Store,
+  StoreModule,
+  ReducerManager,
+  combineReducers
+} from '@ngrx/store';
 
 import { NgrxSelect } from './select';
 import { createReducer } from './factory';
 
 export const STORE_TOKEN = new InjectionToken<any>('STORE_TOKEN');
-export const FEATURE_STORE_TOKEN = new InjectionToken<any>('FEATURE_STORE_TOKEN');
+export const FEATURE_STORE_TOKEN = new InjectionToken<any>(
+  'FEATURE_STORE_TOKEN'
+);
 
 @NgModule({
   imports: [StoreModule],

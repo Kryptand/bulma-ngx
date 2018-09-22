@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, Sanitizer, SecurityContext } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  Sanitizer,
+  SecurityContext
+} from '@angular/core';
 import { NotificationViewModel } from '../../models/notification.view-model';
 import { NotifierOptionsModel } from '../../models/notifier-options.model';
 
@@ -12,28 +20,28 @@ export class NotificationComponent implements OnInit {
   @Output()
   closeNotification: EventEmitter<string> = new EventEmitter<string>();
   timeout: any;
+  styles: any;
 
-  constructor(private sanitizer: Sanitizer) {
-  }
+  constructor(private sanitizer: Sanitizer) {}
 
   ngOnInit() {
     this.notification.content = this.sanitizer.sanitize(
       SecurityContext.HTML,
       this.notification.content
     );
-    if (this.notifierOptions.behaviour.autoHide) {
-      this.autoHide();
-    }
+    this.autoHide();
   }
 
   autoHide() {
-    this.timeout = setTimeout(
-      () => this.closeNotification.emit( this.notification.id ),
-      this.notifierOptions.behaviour.autoHide
-    );
+    if (this.notifierOptions.behaviour.autoHide) {
+      this.timeout = setTimeout(
+        () => this.closeNotification.emit(this.notification.id),
+        this.notifierOptions.behaviour.autoHide
+      );
+    }
   }
 
   cancelHide() {
-    clearTimeout( this.timeout );
+    clearTimeout(this.timeout);
   }
 }

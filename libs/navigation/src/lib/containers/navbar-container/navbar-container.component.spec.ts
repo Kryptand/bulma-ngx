@@ -7,11 +7,11 @@ describe('NavbarContainerComponent', () => {
   let component: NavbarContainerComponent;
   let fixture: ComponentFixture<NavbarContainerComponent>;
 
-  beforeEach( async( () => {
-    TestBed.configureTestingModule( {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
       declarations: [NavbarContainerComponent]
-    } ).compileComponents();
-  } ) );
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NavbarContainerComponent);

@@ -10,7 +10,7 @@ describe('MessageBodyComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MessageBodyComponent]
-    } ).compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

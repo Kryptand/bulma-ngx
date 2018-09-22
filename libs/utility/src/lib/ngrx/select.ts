@@ -34,7 +34,9 @@ export function Select<TState = any, TValue = any>(
     }
     // Handle string vs Selector<TState, TValue>
     if (typeof selectorOrFeature === 'string') {
-      const propsArray = paths.length ? [selectorOrFeature, ...paths] : selectorOrFeature.split('.');
+      const propsArray = paths.length
+        ? [selectorOrFeature, ...paths]
+        : selectorOrFeature.split('.');
       fn = fastPropGetter(propsArray);
     } else {
       fn = selectorOrFeature;
@@ -49,7 +51,11 @@ export function Select<TState = any, TValue = any>(
     };
 
     if (target[selectorFnName]) {
-      throw new Error('You cannot use @Select decorator and a ' + selectorFnName + ' property.');
+      throw new Error(
+        'You cannot use @Select decorator and a ' +
+          selectorFnName +
+          ' property.'
+      );
     }
 
     // Redefine property
@@ -62,7 +68,10 @@ export function Select<TState = any, TValue = any>(
 
       Object.defineProperty(target, name, {
         get: function() {
-          return this[selectorFnName] || (this[selectorFnName] = createSelect.apply(this));
+          return (
+            this[selectorFnName] ||
+            (this[selectorFnName] = createSelect.apply(this))
+          );
         },
         enumerable: true,
         configurable: true

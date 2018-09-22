@@ -1,3 +1,5 @@
-<ng-container *ngIf="(notifications$|async)?.length">
+<ng-container  *ngIf="(notifications$|async)?.length">
+  <div  [ngStyle]="styles" class="notification-wrapper">
   <bulma-notification (closeNotification)="removeNotification($event);" *ngFor="let notification of (notifications$|async);trackBy:notification?.id" @easeInOut [notification]="notification" [notifierOptions]="config$|async"></bulma-notification>
+  </div>
 </ng-container>
