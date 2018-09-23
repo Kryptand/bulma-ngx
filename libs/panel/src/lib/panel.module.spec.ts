@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
 import { PanelModule } from './panel.module';
 
-describe( 'PanelModule', () => {
-  beforeEach( async( () => {
-    TestBed.configureTestingModule( {
+describe('PanelModule', () => {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
       imports: [PanelModule]
-    } ).compileComponents();
-  } ) );
+    }).compileComponents();
+  }));
 
-  it( 'should create', () => {
-    expect( PanelModule ).toBeDefined();
-  } );
-} );
+  it('should create', () => {
+    expect(PanelModule).toBeDefined();
+  });
+});

@@ -16,15 +16,9 @@
       "@bulma-ngx/navigation": ["libs/navigation/src/index.ts"],
       "@bulma-ngx/message": ["libs/message/src/index.ts"],
       "@bulma-ngx/notification": ["libs/notification/src/index.ts"],
-      "@bulma-ngx/utility": [
-        "libs/utility/src/index.ts"
-      ],
-      "@bulma-ngx/panel": [
-        "libs/panel/src/index.ts"
-      ],
-      "@bulma-ngx/tabs": [
-        "libs/tabs/src/index.ts"
-      ]
+      "@bulma-ngx/utility": ["libs/utility/src/index.ts"],
+      "@bulma-ngx/panel": ["libs/panel/src/index.ts"],
+      "@bulma-ngx/tabs": ["libs/tabs/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

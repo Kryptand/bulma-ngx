@@ -289,9 +289,7 @@
               "libs/panel/tsconfig.lib.json",
               "libs/panel/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -317,9 +315,7 @@
               "libs/tabs/tsconfig.lib.json",
               "libs/tabs/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
