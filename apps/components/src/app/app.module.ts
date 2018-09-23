@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { NotificationModule } from '@bulma-ngx/notification';
+import { TabsModule } from '@bulma-ngx/tabs';
 
 @NgModule({
   declarations: [AppComponent, CardsComponent],
@@ -18,6 +19,7 @@ import { NotificationModule } from '@bulma-ngx/notification';
     BreadcrumbModule.forRoot(),
     NxModule.forRoot(),
     HttpClientModule,
+    TabsModule,
     LoaderModule.forRoot(),
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),

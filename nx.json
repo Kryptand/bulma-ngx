@@ -31,6 +31,12 @@
     },
     "utility": {
       "tags": []
+    },
+    "panel": {
+      "tags": []
+    },
+    "tabs": {
+      "tags": []
     }
   }
 }
