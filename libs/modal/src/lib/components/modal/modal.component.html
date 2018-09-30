@@ -1,0 +1,6 @@
+<div class="modal" [class.is-active]="active===true">
+  <div class="modal-background"></div>
+  <ng-content select=".modal-content"></ng-content>
+  <ng-content select=".modal-card"></ng-content>
+  <button (click)="closeModal()" class="modal-close is-large" aria-label="close"></button>
+</div>

@@ -1,97 +1,185 @@
 <bulma-progress-bar></bulma-progress-bar>
-<bulma-breadcrumb-container></bulma-breadcrumb-container>
-<bulma-notification-container></bulma-notification-container>
-<bulma-tab-group>
-  <bulma-tab label="Foschni" [isActive]="true">
-    foschni foschni 1
-  </bulma-tab>
-  <bulma-tab label="Foschni">
-    foschni foschni 2
-  </bulma-tab>
-  <bulma-tab label="Foschni">
-    foschni foschni 1
-  </bulma-tab>
-  <bulma-tab label="Foschni">
-    foschni foschni 1
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-    <p>
-      foschni
-    </p>
-  </bulma-tab>
+<div class="container">
+  <bulma-breadcrumb-container></bulma-breadcrumb-container>
+  <bulma-notification-container></bulma-notification-container>
+  <bulma-panel [title]="'test'">
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
 
-</bulma-tab-group>
-<router-outlet></router-outlet>
+      <ng-template bulmaTabContent>testman test</ng-template>
+    </bulmaTab>
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test2</ng-template>
+    </bulmaTab>
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test3</ng-template>
+    </bulmaTab>
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test4</ng-template>
+    </bulmaTab>
+  </bulma-panel>
+  <bulma-tab-group [styles]="['centered','fullwidth']">
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test</ng-template>
+    </bulmaTab>
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test2</ng-template>
+    </bulmaTab>
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test3</ng-template>
+    </bulmaTab>
+    <bulmaTab>
+      <ng-template bulmaTabTitle>
+        <span>testtest</span>
+      </ng-template>
+
+      <ng-template bulmaTabContent>testman test4</ng-template>
+    </bulmaTab>
+  </bulma-tab-group>
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Modal title</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Save changes</button>
+        <button class="button">Cancel</button>
+      </footer>
+    </div>
+  </div>
+  <bulma-card>
+    <ng-template bulmaCardHeader>
+      <p class="card-header-title">
+        Component
+      </p>
+      <a href="#" class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </a>
+    </ng-template>
+    <ng-template bulmaCardImage>
+      <figure class="image is-4by3">
+        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+      </figure>
+    </ng-template>
+    <ng-template bulmaCardContent>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+        <br>
+        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+      </div>
+    </ng-template>
+    <ng-template bulmaCardFooter>
+      <a href="#" class="card-footer-item">Save</a>
+      <a href="#" class="card-footer-item">Edit</a>
+      <a href="#" class="card-footer-item">Delete</a>
+    </ng-template>
+  </bulma-card>
+  <aside class="menu">
+    <p class="menu-label">
+      General
+    </p>
+    <ul class="menu-list">
+      <li><a>Dashboard</a></li>
+      <li><a>Customers</a></li>
+    </ul>
+    <p class="menu-label">
+      Administration
+    </p>
+    <ul class="menu-list">
+      <li><a>Team Settings</a></li>
+      <li>
+        <a class="is-active">Manage Your Team</a>
+        <ul>
+          <li><a>Members</a></li>
+          <li><a>Plugins</a></li>
+          <li><a>Add a member</a></li>
+        </ul>
+      </li>
+      <li><a>Invitations</a></li>
+      <li><a>Cloud Storage Environment Settings</a></li>
+      <li><a>Authentication</a></li>
+    </ul>
+    <p class="menu-label">
+      Transactions
+    </p>
+    <ul class="menu-list">
+      <li><a>Payments</a></li>
+      <li><a>Transfers</a></li>
+      <li><a>Balance</a></li>
+    </ul>
+  </aside>
+  <button (click)="modalActive=!modalActive" class="is-large" aria-label="close">openModal</button>
+</div>
+
+<bulma-modal [active]="modalActive" (closed)="modalActive=!modalActive">
+  <div class="modal-content">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+              <br>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+              egestas.
+              Nullam condimentum luctus turpis.
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item" aria-label="retweet">
+                <span class="icon is-small">
+
+
+                </span>
+              </a>
+              <a class="level-item" aria-label="like">
+                <span class="icon is-small">
+                </span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+  </div>
+</bulma-modal>

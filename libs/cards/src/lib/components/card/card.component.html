@@ -1,0 +1,18 @@
+<div class="card">
+  <div *ngIf="header" class="card-image">
+    <header class="card-header">
+      <ng-template [ngTemplateOutlet]="header?.templateRef"></ng-template>
+    </header>
+  </div>
+  <div *ngIf="image" class="card-image">
+    <ng-template [ngTemplateOutlet]="image?.templateRef"></ng-template>
+  </div>
+  <div *ngIf="content" class="card-content">
+    <ng-template [ngTemplateOutlet]="content?.templateRef"></ng-template>
+  </div>
+
+  <div *ngIf="footer" class="card-footer">
+    <ng-template [ngTemplateOutlet]="footer?.templateRef"></ng-template>
+  </div>
+
+</div>

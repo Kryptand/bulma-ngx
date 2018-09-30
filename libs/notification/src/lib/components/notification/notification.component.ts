@@ -5,14 +5,15 @@ import {
   OnInit,
   Output,
   Sanitizer,
-  SecurityContext
+  SecurityContext,ChangeDetectionStrategy
 } from '@angular/core';
 import { NotificationViewModel } from '../../models/notification.view-model';
 import { NotifierOptionsModel } from '../../models/notifier-options.model';
 
 @Component({
   selector: 'bulma-notification',
-  templateUrl: './notification.component.html'
+  templateUrl: './notification.component.html',
+ changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotificationComponent implements OnInit {
   @Input() notification: NotificationViewModel;

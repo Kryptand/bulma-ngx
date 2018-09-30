@@ -1,45 +1,39 @@
 import {
-  AfterContentInit,
+  ChangeDetectionStrategy,
   Component,
-  ContentChildren,
-  HostBinding,
+  Input,
   OnInit
 } from '@angular/core';
-import { TabHeaderComponent } from '../tab-header/tab-header.component';
+import { StyleTypes } from '@bulma-ngx/utility';
+import { AbstractTabbedComponent } from '../contracts/abstract-tabbed-component';
 
 @Component({
   selector: 'bulma-tab-group',
   templateUrl: './tab-group.component.html',
-  styleUrls: ['./tab-group.component.css']
+  styleUrls: ['./tab-group.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabGroupComponent implements OnInit, AfterContentInit {
-  @HostBinding('class') classes = 'tabs';
-  @ContentChildren(TabHeaderComponent) tabs: TabHeaderComponent[];
-  activeTabId: string;
-
-  constructor() {}
-
-  ngAfterContentInit() {
-    console.debug(this.tabs);
-    this.tabs.forEach(tab => {
-      tab.activeStateChanged.subscribe(event => {
-        this.activeTabId = tab.tabId;
-        this.tabActiveStateChanged();
+export class TabGroupComponent extends AbstractTabbedComponent
+  implements OnInit {
+  @Input() size?: 'small' | 'medium' | 'large';
+  @Input() styles?: StyleTypes[];
+  cssClasses: string;
+  constructor() {
+    super();
+  }
+  ngOnInit(): void {
+    this.cssClasses = this.buildClassString();
+  }
+  buildClassString(): string {
+    let styleString = '';
+    if (this.styles !== null) {
+      this.styles.forEach(style => {
+        styleString += `is-${style} `;
       });
-    });
-  }
-
-  tabActiveStateChanged() {
-    console.debug(this.activeTabId);
-    this.tabs.filter(x => x.tabId !== this.activeTabId).forEach(elem => {
-      console.debug(elem);
-      elem.isActive = false;
-    });
-    const activeTab = this.tabs.find(x => x.tabId === this.activeTabId);
-    if (activeTab) {
-      activeTab.isActive = true;
     }
+    if (this.size !== null) {
+      styleString += `is-${this.size}`;
+    }
+    return styleString;
   }
-
-  ngOnInit() {}
 }

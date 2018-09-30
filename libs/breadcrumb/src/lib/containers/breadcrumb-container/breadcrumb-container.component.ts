@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { BreadcrumbViewModel } from '../../models/breadcrumb.view-model';
 import { Router, ActivationEnd } from '@angular/router';
 import { BreadcrumbService } from '../../services/breadcrumb.service';
 
 @Component({
   selector: 'bulma-breadcrumb-container',
-  templateUrl: './breadcrumb-container.component.html'
+  templateUrl: './breadcrumb-container.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BreadcrumbContainerComponent {
   @Input() seperator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';

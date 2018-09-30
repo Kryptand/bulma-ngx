@@ -1,4 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { NotificationViewModel } from '../../models/notification.view-model';
 import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -40,6 +45,7 @@ import { NotificationState } from '../../store/notification.reducer';
       ])
     ])
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./notification-container.component.scss']
 })
 export class NotificationContainerComponent implements OnInit, OnDestroy {

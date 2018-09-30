@@ -4,7 +4,7 @@ import { Guid } from '@bulma-ngx/utility';
 
 export class NotificationViewModel {
   id?: string;
-  type: 'info' | 'success' | 'warning' | 'error' | 'primary' | 'link';
+  type: string | 'info' | 'success' | 'warning' | 'error' | 'primary' | 'link';
   content: string;
   display: boolean;
   templateRef?: TemplateRef<any>;
