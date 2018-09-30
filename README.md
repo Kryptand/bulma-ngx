@@ -9,13 +9,13 @@ https://bulma.io/
 - [x] Navigation (Horizontal/Vertical)
 - [x] Message
 - [x] Notification
-- [ ] Panel
-- [ ] Tabs
-- [ ] Pagination
+- [x] Panel
+- [x] Tabs
+- ([ ] Pagination) not sure if it would be really usefull
 - [x] Loader
 - [ ] Table
 - [ ] Form Elements
-- [ ] Modal
+- [x] Modal
 
 - [ ] Distribute lib modules as NPM package
 
